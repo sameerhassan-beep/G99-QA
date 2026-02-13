@@ -9,10 +9,15 @@ import {
   HStack,
   Badge,
   useColorModeValue,
+  Button,
+  Icon,
 } from '@chakra-ui/react'
 import { authService } from '../services/authService'
+import { useNavigate } from 'react-router-dom'
+import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline'
 
 function EmployeeDashboard() {
+  const navigate = useNavigate()
   const user = authService.getCurrentUser()
   const cardBg = useColorModeValue('white', 'gray.800')
   const textColor = useColorModeValue('gray.600', 'gray.300')
@@ -40,6 +45,30 @@ function EmployeeDashboard() {
                 Here's an overview of your activities and tasks
               </Text>
             </VStack>
+          </CardBody>
+        </Card>
+
+        {/* Quick Actions */}
+        <Card bg={cardBg} borderColor={borderColor} shadow="sm">
+          <CardBody>
+            <Heading size="md" mb={4}>Quick Actions</Heading>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
+              <Button 
+                leftIcon={<Icon as={ClipboardDocumentCheckIcon} boxSize={5} />} 
+                colorScheme="vrv" 
+                variant="outline"
+                onClick={() => navigate('/qa-testing')}
+                justifyContent="flex-start"
+                height="auto"
+                p={4}
+                _hover={{ bg: 'vrv.50' }}
+              >
+                <VStack align="start" spacing={0}>
+                  <Text fontWeight="bold">Start QA Testing</Text>
+                  <Text fontSize="xs" fontWeight="normal" color={textColor}>Test projects & report issues</Text>
+                </VStack>
+              </Button>
+            </SimpleGrid>
           </CardBody>
         </Card>
 

@@ -31,6 +31,8 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   BriefcaseIcon,
+  ClipboardDocumentCheckIcon,
+  BeakerIcon,
 } from '@heroicons/react/24/outline'
 import { authService } from '../../services/authService'
 import { useState } from 'react'
@@ -91,7 +93,19 @@ function Sidebar() {
       roles: ['Admin', 'Manager', 'Employee']
     },
     { 
-      name: 'Profile', 
+      name: 'QA Testing', 
+      href: '/qa-testing', 
+      icon: ClipboardDocumentCheckIcon,
+      roles: ['Admin', 'Manager', 'Employee']
+    },
+    { 
+      name: 'Pre Release', 
+      href: '/pre-release', 
+      icon: BeakerIcon,
+      roles: ['Admin', 'Manager', 'Employee']
+    },
+    { 
+      name: 'Profile',  
       href: '/profile', 
       icon: UserIcon,
       roles: ['Admin', 'Manager', 'Employee'] 

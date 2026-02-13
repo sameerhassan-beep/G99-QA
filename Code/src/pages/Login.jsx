@@ -204,7 +204,7 @@ function Login() {
           bg={useColorModeValue('white', 'gray.800')}
           w={{ base: 'full', md: '600px' }}
           maxW="100%"
-          position="relative"s
+          position="relative"
           boxShadow="xl"
           borderRadius="xl"
           border="1px solid"

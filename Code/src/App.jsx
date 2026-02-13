@@ -23,6 +23,9 @@ const Projects = lazy(() => import('./pages/Projects'))
 const ProjectDetails = lazy(() => import('./pages/ProjectDetails'))
 const Departments = lazy(() => import('./pages/Departments'))
 const EmployeeDashboard = lazy(() => import('./pages/EmployeeDashboard'))
+const QAExecution = lazy(() => import('./pages/QAExecution'))
+const PreRelease = lazy(() => import('./pages/PreRelease'))
+const PreReleaseReport = lazy(() => import('./pages/PreReleaseReport'))
 const Settings = lazy(() => import('./pages/Settings'))
 
 // Theme configuration
@@ -84,6 +87,9 @@ function App() {
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/projects/:id" element={<ProjectDetails />} />
                 <Route path="/employee" element={<EmployeeDashboard />} />
+                <Route path="/qa-testing" element={<QAExecution />} />
+                <Route path="/pre-release" element={<PreRelease />} />
+                <Route path="/pre-release/report" element={<PreReleaseReport />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/" element={<Dashboard />} />
               </Route>
